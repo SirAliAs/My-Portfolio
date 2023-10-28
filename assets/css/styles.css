@@ -531,6 +531,10 @@ header {
   margin-left: auto;
 }
 
+.hidden {
+  display: none;
+}
+
 .captcha {
   display: flex;
   justify-content: center;

@@ -1013,11 +1013,11 @@ header {
   flex-direction: column;
 }
 
-@media (max-width: 500px) {
+/* @media (max-width: 500px) {
   .home_social {
-    margin-top: 65px;
+    /* margin-top: 65px; */
   }
-}
+} */
 
 .home_social-icon {
   width: -moz-max-content;

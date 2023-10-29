@@ -60,6 +60,7 @@ var typewriter = new Typewriter(app, {
   strings: [
     "React.js Developer",
     "Former English Teacher",
+    "Full-Stack To Be",
     "Telecom Engineer",
     "Nature Lover",
     "HandPan Player",

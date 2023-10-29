@@ -371,6 +371,7 @@ header {
 .home_social {
   display: flex;
   flex-direction: column;
+  margin-top: ;
 }
 
 .home_social-icon {

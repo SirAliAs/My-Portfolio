@@ -1008,6 +1008,8 @@ header {
   color: var(--first-color);
 }
 
+/*  */
+
 .home_social {
   display: flex;
   flex-direction: column;

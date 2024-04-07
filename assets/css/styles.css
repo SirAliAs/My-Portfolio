@@ -934,6 +934,7 @@ header {
 .nav_link {
   position: relative;
   color: #fff;
+  transition-duration: 300ms;
 }
 
 .nav_link:hover {
@@ -1013,6 +1014,10 @@ header {
 .home_social {
   display: flex;
   flex-direction: column;
+}
+
+i.bx {
+  transition-duration: 300ms;
 }
 
 .home_social-icon {
@@ -1272,6 +1277,7 @@ header {
 
   .nav_link {
     color: var(--second-color);
+    transition-duration: 300ms;
   }
 
   .home {

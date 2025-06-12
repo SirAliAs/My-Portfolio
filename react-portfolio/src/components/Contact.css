@@ -1,0 +1,96 @@
+/* Contact section specific styles */
+.contact_container {
+  row-gap: 2rem; /* Spacing within the container */
+}
+
+.contact_form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* Spacing between form elements */
+  width: 100%;
+  max-width: 500px; /* Max width for the form */
+  margin: 0 auto; /* Center the form */
+}
+
+.contact_input {
+  width: 100%;
+  padding: 1rem;
+  outline: none;
+  border: 1px solid #ccc; /* Lighter border */
+  background-color: var(--container-color); /* Use container color for input background */
+  color: var(--text-color);
+  border-radius: .5rem;
+  font-size: .938rem;
+  transition: border-color 0.3s, background-color 0.3s, color 0.3s;
+}
+
+.dark .contact_input {
+  background-color: var(--container-color); /* Dark mode input background */
+  color: var(--text-color);
+  border-color: #555; /* Darker border for dark mode */
+}
+
+.contact_input::placeholder {
+  color: var(--text-color-light);
+}
+
+.dark .contact_input::placeholder {
+  color: var(--text-color-light);
+}
+
+.contact_input:focus {
+  border-color: var(--first-color);
+}
+
+textarea.contact_input {
+  resize: vertical; /* Allow vertical resize, disable horizontal */
+  min-height: 120px;
+}
+
+.contact_button {
+  /* Inherits from global .button style */
+  /* Add specific overrides if necessary */
+  width: auto; /* Allow button to size based on content */
+  align-self: center; /* Center button if form is wider */
+  cursor: pointer;
+}
+
+.contact_message {
+  text-align: center;
+  margin-top: 1rem;
+  padding: 0.75rem;
+  border-radius: .25rem;
+  font-weight: 500;
+}
+
+.contact_message.success {
+  background-color: #d1e7dd; /* Light green for success */
+  color: #0f5132;
+  border: 1px solid #badbcc;
+}
+
+.dark .contact_message.success {
+  background-color: #143625;
+  color: #a3cfbb;
+  border-color: #2f684d;
+}
+
+.contact_message.error {
+  background-color: #f8d7da; /* Light red for error */
+  color: #842029;
+  border: 1px solid #f5c2c7;
+}
+
+.dark .contact_message.error {
+  background-color: #420f15;
+  color: #f1aeb5;
+  border-color: #a0323d;
+}
+
+
+/* Responsive adjustments for contact section */
+@media screen and (min-width: 768px) {
+  .contact_form {
+    /* max-width: 600px; */ /* Slightly wider form on tablets/desktops if desired */
+  }
+}

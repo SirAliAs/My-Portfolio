@@ -1,0 +1,97 @@
+@import 'boxicons/css/boxicons.min.css';
+
+:root {
+  --header-height: 3rem;
+  /* Light Mode Colors */
+  --first-color: #5361FF;
+  --first-color-alt: #6573FF;
+  --title-color: #333333;
+  --text-color: #4F4F4F;
+  --text-color-light: #8F8F8F;
+  --body-color: #F8F8F8;
+  --container-color: #FFFFFF; /* For elements like header background in light mode */
+}
+
+.dark {
+  /* Dark Mode Colors */
+  --first-color: #788BFF;
+  --first-color-alt: #899BFF;
+  --title-color: #E0E0E0;
+  --text-color: #D1D5DB;
+  --text-color-light: #9CA3AF;
+  --body-color: #1F2937;
+  --container-color: #374151;
+}
+
+body {
+  margin: 0;
+  padding-top: var(--header-height);
+  font-family: 'Poppins', sans-serif;
+  font-size: .938rem;
+  background-color: var(--body-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark {
+  background-color: var(--body-color);
+  color: var(--text-color);
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.section {
+  padding-top: 4rem; /* Increased padding slightly */
+  padding-bottom: 2rem;
+}
+
+.section-title {
+  position: relative;
+  font-size: 1.75rem;
+  color: var(--first-color);
+  margin-top: 1rem;
+  margin-bottom: 3rem; /* Increased bottom margin */
+  text-align: center;
+  font-weight: 600; /* Semibold */
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 56px; /* Slightly shorter */
+  height: 0.22rem; /* Slightly thicker */
+  background-color: var(--first-color);
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: calc(100% + 0.5rem); /* Position below the title */
+}
+
+.bd-grid {
+  max-width: 1024px;
+  display: grid;
+  grid-template-columns: 100%;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .bd-grid {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

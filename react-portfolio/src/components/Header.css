@@ -1,0 +1,142 @@
+/* Header-specific styles */
+.l-header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100; /* From original --z-fixed */
+  background-color: var(--body-color); /* Default background */
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.l-header.dark {
+  background-color: var(--container-color); /* Dark mode background from variables */
+  box-shadow: 0 1px 4px rgba(0,0,0,0.3); /* Adjusted shadow for dark */
+}
+
+.nav {
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav_logo img {
+  height: 32px; /* Adjust as needed, original was likely smaller */
+  vertical-align: middle; /* Helps with alignment */
+}
+
+.nav_menu {
+  position: fixed;
+  top: -150%; /* Start off-screen, ensures it's further than 100% */
+  left: 0;
+  width: 100%;
+  padding: 1.5rem 0;
+  text-align: center;
+  background-color: var(--body-color); /* Use CSS variable */
+  transition: top 0.4s ease-in-out;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 0 0 1rem 1rem;
+  z-index: 99; /* Below header but above content */
+}
+
+.l-header.dark .nav_menu {
+  background-color: var(--container-color); /* Dark mode nav menu */
+  box-shadow: 0 4px 4px rgba(0,0,0,0.3);
+}
+
+.show_menu {
+  top: var(--header-height);
+}
+
+.nav_list {
+  display: flex;
+  flex-direction: column; /* Stack items vertically in mobile menu */
+  align-items: center;
+  row-gap: 1.5rem; /* Space between items */
+}
+
+.nav_link {
+  color: var(--text-color);
+  font-weight: 500; /* Corresponds to --font-medium from original */
+}
+
+.nav_link:hover {
+  color: var(--first-color);
+}
+
+.nav_link.active {
+  color: var(--first-color);
+  /* text-decoration: underline; */ /* Optional: if you want to mark active links more clearly */
+}
+
+.nav_toggle {
+  color: var(--text-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.l-header.dark .nav_link,
+.l-header.dark .nav_toggle {
+  color: var(--text-color); /* Text color in dark mode from variables */
+}
+
+.l-header.dark .nav_link:hover,
+.l-header.dark .nav_link.active {
+  color: var(--first-color); /* Active/hover color in dark mode from variables */
+}
+
+
+/* Dark mode toggle styles from original */
+.toggle-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toggle-container input[type='checkbox'] {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+  position: absolute; /* Keep it out of layout flow */
+}
+
+.toggle-container .lab {
+  cursor: pointer;
+  font-size: 1.25rem; /* Adjusted size */
+  color: var(--text-color); /* Icon color */
+  padding: 0.25rem; /* Some padding to make it easier to click */
+}
+
+.l-header.dark .toggle-container .lab {
+ color: var(--text-color);
+}
+
+
+/* Responsive adjustments for larger screens (from original) */
+@media screen and (min-width: 768px) {
+  .nav_menu {
+    position: static; /* No longer fixed */
+    background-color: transparent !important; /* Important to override inline dark style */
+    box-shadow: none;
+    padding: 0;
+    width: auto;
+    top: 0; /* Reset top position */
+  }
+
+  .nav_list {
+    flex-direction: row; /* Align items horizontally */
+    column-gap: 2rem; /* Space between items */
+  }
+
+  .nav_toggle {
+    display: none; /* Hide hamburger menu */
+  }
+
+  .toggle-container {
+    margin-left: 1.5rem; /* Add some space to the left of the toggle on desktop */
+  }
+  .toggle-container .lab {
+    font-size: 1.25rem; /* Consistent size */
+  }
+}

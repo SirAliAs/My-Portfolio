@@ -1,0 +1,50 @@
+/* Footer section specific styles */
+.footer {
+  background-color: var(--container-color); /* Use container color, adapts to dark mode */
+  color: var(--text-color); /* Adapts to dark mode */
+  text-align: center;
+  font-weight: 500; /* --font-semi */
+  padding: 2rem 0; /* Default padding from .section might be enough, or override */
+  border-top: 1px solid #e0e0e0; /* Subtle top border */
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.dark .footer {
+  border-top: 1px solid #4a5568; /* Darker border for dark mode */
+}
+
+.footer_title {
+  font-size: 1.25rem; /* Slightly larger than normal text */
+  margin-bottom: 1rem; /* --mb-2 */
+}
+
+.footer_social {
+  margin-bottom: 1rem; /* --mb-2 */
+}
+
+.footer_icon {
+  font-size: 1.5rem;
+  color: var(--text-color); /* Use text color that adapts */
+  margin: 0 .5rem; /* --mb-1 equivalent for horizontal spacing */
+  transition: color 0.3s;
+}
+
+.dark .footer_icon {
+  color: var(--text-color);
+}
+
+.footer_icon:hover {
+  color: var(--first-color); /* Use first-color for hover, adapts to dark mode */
+}
+
+.footer_copy {
+  font-size: .875rem; /* --smaller-font-size */
+  color: var(--text-color-light); /* Lighter text for copyright */
+}
+
+.dark .footer_copy {
+  color: var(--text-color-light);
+}
+
+/* Ensure .section class padding is appropriate for footer or override here */
+/* .footer.section { padding: 2rem 0; } */

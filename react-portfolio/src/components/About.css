@@ -1,0 +1,53 @@
+/* About section specific styles */
+.about_container {
+  row-gap: 2rem;
+  text-align: center;
+}
+
+.about_img {
+  justify-self: center; /* Center the image container */
+}
+
+.about_img img {
+  width: 200px; /* Adjust as needed */
+  border-radius: .5rem;
+  /* box-shadow: 0 2px 4px rgba(0,0,0,0.1); */ /* Optional shadow */
+}
+
+.about_subtitle {
+  font-size: 1.5rem; /* Corresponds to --h2-font-size */
+  margin-bottom: 1rem; /* Corresponds to --mb-2 */
+  color: var(--title-color); /* Use title color from variables */
+  font-weight: 600;
+}
+
+.about_text {
+  margin-bottom: 2rem; /* Corresponds to --mb-4 */
+  text-align: justify;
+  padding: 0 1rem; /* Add some padding for better readability on mobile */
+  color: var(--text-color-light);
+}
+
+/* Responsive adjustments for about section */
+@media screen and (min-width: 768px) {
+  .about_container {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    text-align: left; /* Align text to left in its column */
+  }
+  .about_img img {
+    width: 280px; /* Larger image for desktop */
+  }
+  .about_text {
+    padding: 0; /* Reset padding */
+  }
+}
+
+@media screen and (min-width: 1024px) {
+    .about_container {
+        column-gap: 3rem; /* Increase gap for larger screens */
+    }
+    .about_img img {
+        width: 320px;
+    }
+}

@@ -1,0 +1,123 @@
+/* Home section specific styles */
+.home {
+  position: relative;
+  row-gap: 5rem;
+  padding: 4rem 0 5rem; /* Adjust padding as needed */
+}
+
+.home_data {
+  align-self: center;
+}
+
+.home_title {
+  font-size: 2.5rem; /* Corresponds to --big-font-size */
+  margin-bottom: 2rem; /* Corresponds to --mb-5 */
+  font-weight: 700;
+}
+
+.home_title-color {
+  color: var(--first-color);
+}
+
+#autoWrite .Typewriter__wrapper {
+  /* Style the typewriter text itself if needed, e.g., color, font-weight */
+  /* By default, it might inherit from .home_title or its parent */
+  /* Example: */
+  /* color: var(--text-color); */
+  /* font-weight: normal; */
+}
+
+#autoWrite .Typewriter__cursor {
+  /* Style the typewriter cursor */
+  /* Example: */
+  /* color: var(--first-color); */
+}
+
+
+.home_social {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: -0.5rem; /* Adjust positioning */
+  top: 50%;
+  transform: translateY(-50%);
+  row-gap: 1rem;
+}
+
+.home_social-icon {
+  width: max-content;
+  font-size: 1.5rem;
+  color: var(--first-color);
+}
+
+.home_social-icon:hover {
+  color: var(--first-color-alt);
+}
+
+.home_img {
+  position: relative; /* For pseudo-elements if any, or just for structure */
+  justify-self: center; /* Center the image container */
+}
+
+.home_img img {
+  width: 260px; /* Adjust as needed */
+  border-radius: .5rem;
+  /* Add a subtle shadow or border if desired */
+  /* box-shadow: 0 4px 8px rgba(0,0,0,0.1); */
+}
+
+
+/* Button style (from original, can be global or component-specific) */
+.button {
+  display: inline-block;
+  background-color: var(--first-color);
+  color: #fff;
+  padding: .75rem 2.5rem;
+  font-weight: 500; /* --font-semi */
+  border-radius: .5rem;
+  transition: .3s;
+}
+
+.button:hover {
+  background-color: var(--first-color-alt);
+  /* transform: translateY(-2px); */ /* Optional hover effect */
+}
+
+
+/* Responsive adjustments for home section */
+@media screen and (min-width: 768px) {
+  .home {
+    row-gap: 5rem; /* Keep the gap or adjust */
+    grid-template-columns: repeat(2, 1fr); /* Two columns on larger screens */
+    align-items: center; /* Vertically align items in columns */
+    padding: 6rem 0 2rem; /* Adjust padding */
+  }
+  .home_data {
+    text-align: left; /* Align text to left in its column */
+  }
+  .home_title {
+    font-size: 3.5rem; /* Larger font for desktop */
+  }
+  .home_social {
+    position: initial; /* No longer absolute */
+    flex-direction: row; /* Align social icons horizontally */
+    column-gap: 2rem;
+    align-self: flex-end; /* Align to bottom of its container */
+    margin-bottom: 2rem; /* Add some space below social icons */
+  }
+  .home_img {
+     /* Ensure image is in the second column, can be controlled by order or grid placement */
+  }
+  .home_img img {
+    width: 350px; /* Larger image for desktop */
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .home_title {
+    font-size: 4.5rem; /* Even larger for very wide screens */
+  }
+  .home_img img {
+    width: 400px;
+  }
+}

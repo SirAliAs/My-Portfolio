@@ -1,0 +1,65 @@
+/* Projects (Work) section specific styles */
+.work_container {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+  gap: 2rem; /* Spacing between items */
+  padding: 1rem 0;
+}
+
+.work_img_link {
+  display: block; /* Ensure the link takes up block space for shadow and transition */
+  border-radius: .5rem;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dark .work_img_link {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Darker shadow for dark mode */
+}
+
+.work_img_link:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.dark .work_img_link:hover {
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+}
+
+.work_img_content {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Remove any extra space below image */
+  transition: transform 0.3s ease;
+}
+
+.work_img_link:hover .work_img_content {
+  transform: scale(1.05); /* Slight zoom on image hover */
+}
+
+.cv_button_container {
+  text-align: center;
+  margin-top: 3rem; /* Space above the CV button */
+}
+
+.cv_button {
+  /* Specific styles for CV button if needed, */
+  /* otherwise it inherits from global .button */
+  padding: .9rem 2.8rem; /* Slightly larger padding if desired */
+}
+
+/* Responsive adjustments for projects section if needed beyond the grid auto-fit */
+/* For example, adjusting gap or number of columns at very specific breakpoints if auto-fit isn't perfect */
+
+@media screen and (min-width: 768px) {
+  .work_container {
+    /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */ /* Slightly larger base size for items */
+    gap: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .work_container {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Smaller base for very small screens */
+  }
+}

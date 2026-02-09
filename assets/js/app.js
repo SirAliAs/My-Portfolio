@@ -5,17 +5,23 @@ const logoSpan = document.querySelectorAll(".logo");
 
 window.addEventListener("DOMContentLoaded", () => {
   logoSpan.forEach((span, idx) => {
-    setTimeout(() => {
-      span.classList.add("appear");
-    }, (idx + 1) * 90);
+    setTimeout(
+      () => {
+        span.classList.add("appear");
+      },
+      (idx + 1) * 90,
+    );
   });
 
   setTimeout(() => {
     logoSpan.forEach((span, idx) => {
-      setTimeout(() => {
-        span.classList.remove("appear");
-        span.classList.add("fade");
-      }, (idx + 1) * 80);
+      setTimeout(
+        () => {
+          span.classList.remove("appear");
+          span.classList.add("fade");
+        },
+        (idx + 1) * 80,
+      );
     });
   }, 1500);
 
@@ -59,8 +65,9 @@ var app = document.getElementById("autoWrite");
 var typewriter = new Typewriter(app, {
   strings: [
     "React.js Developer",
+    "Next.js Developer",
+    "Express.js Developer",
     "Former English Teacher",
-    "Full-Stack To Be",
     "Telecom Engineer",
     "Nature Lover",
     "HandPan Player",
